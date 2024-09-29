@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1D9F87;
+    background-image: url(images/bg2.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+
+/* Heading */
+.heading {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3rem;
+    padding: 2rem;
+}
+
+/* Container */
+.container {
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* Game Board */
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensures 3 boxes in a row */
+    gap: 1.5vmin;
+    width: 60vmin; /* Ensure the game board maintains square-like proportions */
+    max-width: 90vw; /* Responsive max width */
+    height: auto;
+}
+
+.box {
+    height: 18vmin; /* Keep boxes square */
+    width: 18vmin; /* Keep boxes square */
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    font-size: 6vmin;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Buttons */
+#reset-btn, #new-btn {
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: black;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    margin: 0.5rem;
+}
+
+#reset-btn:hover, #new-btn:hover {
+    animation: bubble 0.4s ease-out;
+    background-color: rgba(63, 196, 65, 0.885);
+    color: rgb(9, 11, 10);
+}
+
+/* Message */
+#message {
+    font-size: 4vmin;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.msg-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* Hide Element */
+.hide {
+    display: none;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2.5rem;
+        padding: 1.5rem;
+    }
+
+    .game {
+        width: 80vw; /* Adjust width for smaller screens */
+        gap: 1rem; /* Adjust gap for smaller screens */
+    }
+
+    .box {
+        height: 22vw; /* Adjust box size for tablets */
+        width: 22vw;
+        font-size: 7vw; /* Adjust font size for tablets */
+    }
+
+    #message {
+        font-size: 5vmin;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    .game {
+        width: 90vw; /* Fit game to small screens */
+        gap: 0.8rem; /* Smaller gap between boxes */
+    }
+
+    .box {
+        height: 28vw; /* Adjust box size for smaller mobile screens */
+        width: 28vw;
+        font-size: 8vw; /* Adjust font size for smaller screens */
+    }
+
+    #message {
+        font-size: 6vmin;
+    }
+
+    #reset-btn, #new-btn {
+        font-size: 0.9rem;
+    }
+}
